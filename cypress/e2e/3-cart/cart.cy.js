@@ -1,11 +1,7 @@
 /// <reference types="cypress" />
 
-describe("Login Test", () => {
-  it("Visit Landing Page Demoblaze", () => {
-    cy.visit("https://demoblaze.com/");
-    // cy.get(".login_logo").should("contain.text", "Swag Labs");
-  });
-  it("Login", () => {
+describe("Add to cart Test", () => {
+  it("Add to cart", () => {
     cy.visit("https://demoblaze.com/");
     cy.get("#login2").click();
     cy.wait(1500);
@@ -14,5 +10,10 @@ describe("Login Test", () => {
     cy.get(
       "#logInModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary"
     ).click();
+    cy.get(
+      ":nth-child(1) > .card > .card-block > .card-title > .hrefch"
+    ).click();
+    cy.get(".col-sm-12 > .btn").click();
+    cy.get("#cartur").click();
   });
 });
